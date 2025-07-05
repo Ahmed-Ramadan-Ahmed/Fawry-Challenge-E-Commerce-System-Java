@@ -41,7 +41,6 @@ public class Item {
         this.itemWeight = weight;
     }
 
-    // Getters
     public String getItemName() { return itemName; }
     public double getItemPrice() { return itemPrice; }
     public int getStockQuantity() { return stockQuantity; }
@@ -50,7 +49,6 @@ public class Item {
     public boolean needsShipping() { return needsShipping; }
     public double getItemWeight() { return itemWeight; }
 
-    // Check if item is expired
     public boolean isExpired() {
         if (!canExpire) return false;
         return LocalDate.now().isAfter(expireDate);

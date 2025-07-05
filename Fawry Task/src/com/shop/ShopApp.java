@@ -6,10 +6,8 @@ public class ShopApp {
     public static void main() {
         System.out.println("** SIMPLE E-COMMERCE SHOP **\n");
 
-        // Create the shop
         Shop myShop = new Shop();
 
-        // Add items to shop
         Item cheese = new Item("Cheese", 15.99, 10, 0.5, LocalDate.now().plusDays(7));
         Item biscuits = new Item("Biscuits", 3.99, 20, 0.3, LocalDate.now().plusDays(30));
         Item tv = new Item("TV", 499.99, 5, 15.0);

@@ -32,12 +32,12 @@ public class ShopApp {
         // Test 1: Normal purchase
         System.out.println("Test 1: Normal purchase with shipping");
         try {
-            Customer john = new Customer("John Smith", 1000.0);
-            john.getShoppingCart().addItem(shop.findItem("Cheese"), 2);
-            john.getShoppingCart().addItem(shop.findItem("Biscuits"), 3);
-            john.getShoppingCart().addItem(shop.findItem("Mobile Scratch Card"), 1);
+            Customer Ahmed = new Customer("Ahmed Ramadan", 1000.0);
+            Ahmed.getShoppingCart().addItem(shop.findItem("Cheese"), 2);
+            Ahmed.getShoppingCart().addItem(shop.findItem("Biscuits"), 3);
+            Ahmed.getShoppingCart().addItem(shop.findItem("Mobile Scratch Card"), 1);
 
-            OrderDetails order = shop.processCheckout(john);
+            OrderDetails order = shop.processCheckout(Ahmed);
             System.out.println("✓ Purchase successful!");
 
         } catch (Exception e) {
@@ -47,8 +47,8 @@ public class ShopApp {
         // Test 2: Empty cart
         System.out.println("\nTest 2: Empty cart");
         try {
-            Customer mary = new Customer("Mary Johnson", 500.0);
-            shop.processCheckout(mary);
+            Customer Mo = new Customer("Mo Salah", 500.0);
+            shop.processCheckout(Mo);
         } catch (Exception e) {
             System.out.println("✓ Caught expected error: " + e.getMessage());
         }

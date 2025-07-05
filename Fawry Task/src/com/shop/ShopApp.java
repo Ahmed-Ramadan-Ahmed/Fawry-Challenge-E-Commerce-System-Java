@@ -20,7 +20,6 @@ public class ShopApp {
         myShop.addItemToShop(mobile);
         myShop.addItemToShop(scratchCard);
 
-        // Test different scenarios
         runTests(myShop);
 
         System.out.println("** ALL TESTS FINISHED **");

@@ -23,21 +23,17 @@ public class Shop {
     public OrderDetails processCheckout(Customer customer) {
         Cart cart = customer.getShoppingCart();
 
-        // Check if cart is empty
         if (cart.isEmpty()) {
             throw new RuntimeException("Cart is empty");
         }
 
-        // Check all items in cart
         for (CartItem cartItem : cart.getCartItems()) {
             Item item = cartItem.getItem();
 
-            // Check if item is expired
             if (item.isExpired()) {
                 throw new RuntimeException("Item '" + item.getItemName() + "' is expired");
             }
 
-            // Check if item has enough stock
             if (!item.hasEnoughStock(cartItem.getQuantity())) {
                 throw new RuntimeException("Item '" + item.getItemName() + "' is out of stock");
             }
@@ -64,31 +60,24 @@ public class Shop {
 
         double totalAmount = subtotal + shippingCost;
 
-        // Check if customer can afford
         if (!customer.canAfford(totalAmount)) {
             throw new RuntimeException("Customer's balance is insufficient");
         }
 
-        // Process payment
         customer.payAmount(totalAmount);
 
-        // Update stock quantities
         for (CartItem cartItem : cart.getCartItems()) {
             cartItem.getItem().reduceStock(cartItem.getQuantity());
         }
 
-        // Create order
         OrderDetails order = new OrderDetails(cart.getCartItems(), subtotal, shippingCost);
 
-        // Print checkout details
         printCheckoutInfo(order, customer.getAccountBalance());
 
-        // Process shipping if needed
         if (!itemsToShip.isEmpty()) {
             shippingService.processShipment(itemsToShip);
         }
 
-        // Clear customer's cart
         cart.clearCart();
 
         return order;

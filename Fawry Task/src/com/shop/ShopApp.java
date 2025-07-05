@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class ShopApp {
     public static void main() {
-        System.out.println("=== SIMPLE E-COMMERCE SHOP ===\n");
+        System.out.println("** SIMPLE E-COMMERCE SHOP **\n");
 
         // Create the shop
         Shop myShop = new Shop();
@@ -25,7 +25,7 @@ public class ShopApp {
         // Test different scenarios
         runTests(myShop);
 
-        System.out.println("=== ALL TESTS FINISHED ===");
+        System.out.println("** ALL TESTS FINISHED **");
     }
 
     private static void runTests(Shop shop) {

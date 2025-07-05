@@ -1,5 +1,5 @@
 # Link to C#-based Solution: [Link](https://github.com/Ahmed-Ramadan-Ahmed/Fawry-Challenge-E-Commerce-System)
-# Fawry Quantum Internship Challenge 2025 - Java-based Solution
+# Fawry Quantum Internship Challenge 2025 - Java based Solution
 
 A simple Java-based e-commerce system that supports product management, shopping cart functionality, and order processing with shipping capabilities.
 
